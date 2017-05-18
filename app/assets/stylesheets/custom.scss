@@ -1,0 +1,382 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+/* ideas */
+
+.ideas {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
+/* votes */
+
+.vote-count {
+  color: white;
+  font-weight: bold;
+}
+
+.btn-teal{
+  color: white;
+  background-color: #90CE00;
+  border-color: darken(#90CE00, 5%);
+  &:hover {
+    color: white;
+    background: darken(#90CE00, 5%);
+  }
+  &:visited {
+    color: white;
+  }
+}
+
+.reverse-btn-teal{
+  background-color: white;
+  color: #90CE00;
+  border-color: darken(#90CE00, 5%);
+  &:hover {
+    background-color: white;
+    color: darken(#90CE00, 5%);
+  }
+}
+
+.block-btn {
+  display: block;
+}
+
+.vote-action {
+  width: 72px;
+}
+
+.btn-upvote {
+  color: white;
+  background-color: #1caff6;
+  border-color:darken(#1caff6, 5%);
+}
+
+.btn-upvote:hover {
+  color: white;
+  background-color: darken(#1caff6, 5%);
+}
+
+.btn-downvote {
+  color: white;
+  margin-top: 5px;
+  background-color: #D43231;
+  border-color:darken(#D43231, 5%);
+}
+
+.btn-downvote:hover {
+  color: white;
+  background-color: darken(#D43231, 5%);
+}
+
+.btn-upvote.voted {
+  border: 2px inset darken(#1caff6, 20%);
+}
+
+.btn-upvote.voted:hover {
+  background-color: darken(#1caff6, 5%);
+  border: 2px inset darken(#1caff6, 20%);
+}
+
+.btn-downvote.voted {
+  border: 2px inset darken(#D43231, 20%);
+}
+
+.btn-downvote.voted:hover {
+  background-color: darken(#D43231, 5%);
+  border: 2px inset darken(#D43231, 20%);
+}
+
+@media (min-width: 1200px) {
+  /* line 10, /Users/niloufar/.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.1.1.0/vendor/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 1250px;
+  }
+}
+.small-margin-bottom{
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.trending {
+  padding: 5px;
+  border-color: #f1f1f1;
+  word-wrap: break-word;
+  p {
+    font-size: 18px;
+  }
+  .vote-action button {
+    @extend .btn-xs;
+    width: 100%;
+  }
+}
+
+.panel-default {
+  border-color: #f1f1f1;
+}
+
+.panel-default > .panel-heading {
+  color: #867D76;
+  background-color: #f1f1f1;
+  border: 0px;
+  border-color: #dddddd;
+
+}
+
+.panel-trending {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #aea299;
+}
+
+.panel-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 18px;
+  color: inherit;
+}
+
+.campaign-title {
+  font-size: 20px;
+  color: #666;
+  margin-top: 5px;
+}
