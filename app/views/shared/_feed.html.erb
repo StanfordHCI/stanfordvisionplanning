@@ -1,6 +1,6 @@
 <% if @ideas.any? %>
-  <ol class="ideas">
+  <div class="idea-container" >
     <%= render @ideas %>
-  </ol>
-  <%= will_paginate @ideas %>
+  </div>
+  <%= will_paginate(@ideas, renderer: WillPaginate::ActionView::LinkRenderer) %>
 <% end %>

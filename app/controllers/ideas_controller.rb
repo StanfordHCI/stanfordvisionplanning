@@ -33,9 +33,9 @@ class IdeasController < ApplicationController
       vote.save
     end
     
-    voted = vote.destroyed? ? 0 : vote.value
-    render json: { upvotes: idea.upvotes, downvotes: idea.downvotes,
-        voted: voted}
+   voted = vote.destroyed? ? 0 : vote.value
+   #render json: { upvotes: idea.upvotes, downvotes: idea.downvotes, voted: voted}
+   redirect_to root_url
   end
 
   def destroy
@@ -43,6 +43,7 @@ class IdeasController < ApplicationController
     flash[:success] = "Idea deleted"
     redirect_to request.referrer || root_url
   end
+  
   def index
   	redirect_to root_url
   end

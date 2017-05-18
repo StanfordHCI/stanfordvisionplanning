@@ -16,7 +16,6 @@ ready = ->
         changeVote 'upvote', 1
         changeVote 'downvote', -1
         
-        $container.parents('.idea').find('.threshold').text(data.threshold)
     
     $('.vote-action-container').on 'ajax:error', '.vote-action', ->
         document.location.href = '/users/sign_in'

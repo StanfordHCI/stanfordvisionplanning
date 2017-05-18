@@ -1,6 +1,6 @@
-<li id="idea-<%= idea.id %>">
-
-       <div class="row action">
+<article class="idea panel panel-default" id="idea-<%= idea.id %>">
+    <div class="panel-body clearfix">
+        <div class="row action">
             <div class="col-sm-1">  
                 <div class="vote-action-container">
                     <%= render 'ideas/vote_button', idea: idea, value: 1 %>
@@ -8,13 +8,7 @@
                 </div>
             </div>
             <div class="col-sm-11">
-                <p class="content lead"> 
-                <% if idea.thredded_topic != nil %>
-                <%= link_to idea.content, Thredded::Engine.routes.url_helpers.messageboard_topic_path(messageboard_id: idea.thredded_topic.messageboard_id, id: idea.thredded_topic.id), class: 'normal-link' %> 
-                <% else %>
-                	<%= idea.content %>
-                <% end %>
-                </p>
+                <p class="content lead"><%= idea.content %></p>
             </div>
         </div>
         <footer class="pull-right">
@@ -28,6 +22,8 @@
                     title: idea.content %>
             <% end %>
         </footer>
-</li>
+    </div>
+</article>
+
 
 
