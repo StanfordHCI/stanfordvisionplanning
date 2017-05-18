@@ -1,4 +1,5 @@
-
-  <%= render 'shared/idea_form' %>
+	<% if logged_in? %>
+  		<%= render 'shared/idea_form' %>
+  	<% end %>
       <h3>Ideas</h3>
       <%= render 'shared/feed' %>
