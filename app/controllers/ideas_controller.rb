@@ -34,8 +34,8 @@ class IdeasController < ApplicationController
     end
     
    voted = vote.destroyed? ? 0 : vote.value
-   #render json: { upvotes: idea.upvotes, downvotes: idea.downvotes, voted: voted}
-   redirect_to root_url
+   render json: { upvotes: idea.upvotes, downvotes: idea.downvotes, voted: voted}
+  
   end
 
   def destroy

@@ -8,7 +8,14 @@
                 </div>
             </div>
             <div class="col-sm-11">
-                <p class="content lead"><%= idea.content %></p>
+               <p class="content lead"> 
+                     <% if idea.thredded_topic != nil %>
+                     <%= link_to idea.content, Thredded::Engine.routes.url_helpers.messageboard_topic_path(messageboard_id: idea.thredded_topic.messageboard_id, id: idea.thredded_topic.id), class: 'normal-link' %> 
+                     <% else %>
+                       <%= idea.content %>
+                     <% end %>
+                     </p>
+
             </div>
         </div>
         <footer class="pull-right">
