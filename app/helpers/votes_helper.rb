@@ -2,7 +2,7 @@ module VotesHelper
   def vote_button_options idea, value
     vote_type = value > 0 ? 'upvote' : 'downvote'
     
-    { remote: true, method: :patch, params: { value: value },
+    { remote: true, method: :patch, format: :json, params: { value: value },
       form: { data: { type: :json }, class: 'vote-action' },
       id: "#{vote_type}-#{idea.id}",
       class: vote_classes(idea, value, vote_type) }

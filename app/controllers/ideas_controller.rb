@@ -33,9 +33,13 @@ class IdeasController < ApplicationController
       vote.save
     end
     
-   voted = vote.destroyed? ? 0 : vote.value
-   render json: { upvotes: idea.upvotes, downvotes: idea.downvotes, voted: voted}
-  
+    voted = vote.destroyed? ? 0 : vote.value
+    #render json: 
+    respond_to do |format|
+      format.json { render json: { upvotes: idea.upvotes, downvotes: idea.downvotes, voted: voted}, status: :ok }
+      format.html { }
+      
+    end
   end
 
   def destroy

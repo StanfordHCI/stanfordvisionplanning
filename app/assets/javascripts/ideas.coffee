@@ -1,25 +1,14 @@
 ready = ->
     MAX_IDEA_CHARS = 140
     
-    $('.vote-action-container').on 'ajax:success', '.vote-action', (e, data) ->
-        $container = $(this).parent()
-        
-        changeVote = (type, value) ->
-            $voteCount = $container.find ".#{type} > .vote-count"
-            $voteCount.text data["#{type}s"]
-            
-            if parseInt(data.voted) is value
-                $voteCount.parent().addClass('voted')
-            else
-                $voteCount.parent().removeClass('voted')
-        
-        changeVote 'upvote', 1
-        changeVote 'downvote', -1
+    $('.vote-action').on 'ajax:success', (e, data, status, xhr) ->
+        alert "The article was deleted."
+ 
         
     
-    $('.vote-action-container').on 'ajax:error', '.vote-action', ->
-        document.location.href = '/users/sign_in'
-
+    $('.vote-action').on 'ajax:error', ->
+        alert "The article was deleted."
+ 
     $('#idea_content').keydown ->
         updateCountdown = =>
             chars = $.trim($(this).val()).split(/\s+/).join(' ')
