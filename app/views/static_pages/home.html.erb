@@ -1,6 +1,8 @@
+  	<p><i>Unless someone cares a great deal, the situation will never improve. - The Lorax</i></p>
+  	<p>Have an idea that will change Stanford for the better? Want to raise an issue? Post it here. On the weekend of June 17th we will hold an online workshop for all ideas that have reached at least 100 upvotes. We will help you collaborate to turn your idea into a proposal that we will host online here and help you submit to <%= link_to "Stanford Vision Planning", "http://planning.stanford.edu" %>!</p>
+
 	<% if logged_in? %>
   		<%= render 'shared/idea_form' %>
   	<% end %>
-
       <h3>Ideas</h3>
       <%= render 'shared/feed' %>
