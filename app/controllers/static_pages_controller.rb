@@ -3,6 +3,6 @@ class StaticPagesController < ApplicationController
     @idea = current_user.ideas.build if logged_in?
     @ideas = Idea.all.paginate(page: params[:page])
   end
-  def help
+  def faq
   end
 end

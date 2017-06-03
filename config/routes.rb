@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  get '/faq', to: 'static_pages#faq'
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :ideas, only: [:create, :update, :destroy, :index]
   post '/upvote', to: 'votes#upvote'
