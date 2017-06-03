@@ -19,7 +19,7 @@
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
-      <%= link_to 'Upvote', "/ideas/20", format: :json, method: :patch, class: "idea-20 btn btn-upvote upvote ", remote: true %>
+
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
