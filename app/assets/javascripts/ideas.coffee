@@ -20,7 +20,7 @@ ready = ->
     $('.vote-action-container').on 'ajax:error', '.vote-action', ->
         document.location.href = '/users/sign_in'
 
-    $('#idea_content').keydown ->
+    $('#idea_description').keydown ->
         updateCountdown = =>
             chars = $.trim($(this).val()).split(/\s+/).join(' ')
             numCharsLeft = MAX_IDEA_CHARS - chars.length

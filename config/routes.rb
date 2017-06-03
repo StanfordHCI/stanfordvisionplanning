@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :ideas, only: [:create, :update, :destroy, :index]
+  post '/upvote', to: 'votes#upvote'
   mount Thredded::Engine => '/forum'
 end

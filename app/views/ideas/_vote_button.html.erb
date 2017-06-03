@@ -1,4 +1,4 @@
-<%= button_to idea, vote_button_options(idea, value) do %>
+<%= link_to idea_path(:id => idea.id, :value => value), vote_button_options(idea, value) do %>
   <% if value > 0 %>
     <span class="glyphicon glyphicon-chevron-up"></span>
     <span class="sr-only">upvote</span>
@@ -9,3 +9,4 @@
     <span class="vote-count"><%= idea.downvotes %></span>
   <% end %>
 <% end %>
+

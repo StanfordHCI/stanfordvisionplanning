@@ -10,13 +10,16 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
       </script>
     <![endif]-->
+
   </head>
   <body>
+
     <%= render 'layouts/header' %>
     <div class="container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
       <% end %>
+      <%= link_to 'Upvote', "/ideas/20", format: :json, method: :patch, class: "idea-20 btn btn-upvote upvote ", remote: true %>
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>

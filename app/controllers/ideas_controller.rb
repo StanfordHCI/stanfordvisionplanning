@@ -25,21 +25,17 @@ class IdeasController < ApplicationController
   def update
     idea = Idea.find(params[:id])
     vote = idea.votes.find_or_initialize_by(user: current_user)
-    
     if vote.value == params[:value].to_i
       vote.destroy
     else
       vote.value = params[:value]
       vote.save
+      
+      #idea.forum_topic.subscribe_user current_user.id
     end
     
     voted = vote.destroyed? ? 0 : vote.value
-    #render json: 
-    respond_to do |format|
-      format.json { render json: { upvotes: idea.upvotes, downvotes: idea.downvotes, voted: voted}, status: :ok }
-      format.html { }
-      
-    end
+    render json: { upvotes: idea.upvotes, downvotes: idea.downvotes,voted: voted}
   end
 
   def destroy
