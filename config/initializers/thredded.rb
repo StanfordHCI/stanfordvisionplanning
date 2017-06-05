@@ -71,7 +71,7 @@ Thredded.messageboards_order = :position
 # Thredded.email_outgoing_prefix = '[My Forum] '
 #
 # The parent mailer for all Thredded mailers
- Thredded.parent_mailer = 'ActionMailer::Base'
+ Thredded.parent_mailer = 'ApplicationMailer'
 
 # ==> View Configuration
 # Set the layout for rendering the thredded views.
