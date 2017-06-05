@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @code_token = params['regcode'] 
     regcode = regcode_for(@code_token)
     if regcode == nil
-      flash[:danger] = "A valid registration code is needed to sign up, request a code here."
+      flash[:info] = "A valid registration code is needed to sign up, request a code here."
       redirect_to '/regcodes/new'  and return
     else
       @user = User.new

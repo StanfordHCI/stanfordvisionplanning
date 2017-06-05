@@ -18,8 +18,7 @@ ready = ->
         
     
     $('.vote-action-container').on 'ajax:error', '.vote-action', ->
-        alert "HII"
-        document.location.href = '/users/sign_in'
+        document.location.href = '/login'
 
     $('#idea_description').keydown ->
         updateCountdown = =>
