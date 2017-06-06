@@ -13,6 +13,8 @@ class IdeasController < ApplicationController
       end
       topic = Thredded::Topic.find_by(title: @idea.content)
       @idea.thredded_topic = topic
+      @idea.votes.build(value: 1, user: current_user)
+      Vote.create()
       @idea.save
       flash[:success] = "idea created!" 
       redirect_to root_url
