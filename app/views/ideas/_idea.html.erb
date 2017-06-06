@@ -27,11 +27,6 @@
                 Posted <%= time_ago_in_words(idea.created_at) %> ago
             <% end %>
             <cite>by <%= idea.user.name %></cite>.
-            <% if current_user?(idea.user) %>
-                <%= link_to "delete", idea, method: :delete,
-                    data: { confirm: "Are you sure?" },
-                    title: idea.content %>
-            <% end %>
         </footer>
     </div>
 </article>

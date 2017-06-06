@@ -1,6 +1,6 @@
 class Idea < ApplicationRecord
   belongs_to :user
-  has_many :votes, dependent: :destroy
+  has_many :votes, dependent: :delete_all
   belongs_to :thredded_topic,  class_name: 'Thredded::Topic'
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
