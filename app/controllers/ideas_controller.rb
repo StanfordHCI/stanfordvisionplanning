@@ -34,6 +34,7 @@ class IdeasController < ApplicationController
         vote.value = params[:value]
         vote.save
         
+        Thredded::UserTopicFollow.create_unless_exists(current_user.id, idea.thredded_topic_id)
         #idea.forum_topic.subscribe_user current_user.id
       end
       
