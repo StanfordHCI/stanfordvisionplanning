@@ -3,13 +3,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include RegcodesHelper
   include ReqemailsHelper
-  def default_url_options
-    if Rails.env.production?
-      {:host => "stanfordlorax.com"}
-    else  
-      {}
-    end
-  end
+
 
   private
 
