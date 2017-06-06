@@ -7,7 +7,7 @@ class IdeasController < ApplicationController
       forum_messageboard = Thredded::Messageboard.find_by(name: "Ideas")
       
       if forum_messageboard != nil
-		new_topic = Thredded::TopicForm.new(user: current_user, messageboard: forum_messageboard, title: @idea.content, content: "Vote on the idea here: "+root_url)
+		new_topic = Thredded::TopicForm.new(user: current_user, messageboard: forum_messageboard, title: @idea.content, content: "Vote on the idea here: http://www.stanfordlorax.com")
       	new_topic.save
       	
       end
