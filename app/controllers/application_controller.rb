@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include RegcodesHelper
   include ReqemailsHelper
-
-
   private
 
     # Confirms a logged-in user.

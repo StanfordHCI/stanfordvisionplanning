@@ -3,7 +3,9 @@
 
 	<% if logged_in? %>
   		<%= render 'shared/idea_form' %>
-  	<% end %>
+    <% else %>
+    	<%= link_to "Sign up to post an idea", signup_path%>
+  	<% end %> 
       <h3>Ideas</h3>
       <p>Vote on ideas or click on an idea to view the forum discussion.</p>
       <%= render 'shared/feed' %>
