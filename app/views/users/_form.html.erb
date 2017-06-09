@@ -1,13 +1,16 @@
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
-
+ 
   <%= f.label :name %>
+  <p>This will be your screen name displayed with your account, you can choose to use your real name or a pseudonym.</p>
   <%= f.text_field :name, class: 'form-control' %>
 
   <%= f.label :email %>
+  <p>This email address will be linked to your account and used to contact you. You do not have to use your Stanford email address. </p>
   <%= f.email_field :email, class: 'form-control' %>
 
   <%= f.label :password %>
+  <p>Minimum 6 characters</p>
   <%= f.password_field :password, class: 'form-control' %>
 
   <%= f.label :password_confirmation %>
