@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
     @idea = current_user.ideas.build     if logged_in?
     @recent_ideas = Idea.order( 'created_at DESC' ).take(3)
     @ideas = (Idea.all.sort {|a,b| a.votes_value <=> b.votes_value}.reverse-@recent_ideas).paginate(page: params[:page])
+    @ideas = @ideas.insert(2, *@recent_ideas)
   end
   def faq
   end

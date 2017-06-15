@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include RegcodesHelper
   include ReqemailsHelper
+  
   def nav
     render :partial => 'layouts/forum_header'
   end
@@ -16,4 +17,5 @@ class ApplicationController < ActionController::Base
         redirect_to login_url
       end
     end
+   
 end
