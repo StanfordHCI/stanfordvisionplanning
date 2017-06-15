@@ -1,12 +1,25 @@
-  	<p><i>Unless someone cares a great deal, the situation will never improve. - The Lorax</i></p>
-  	<p>Have an idea that will change Stanford for the better? Want to raise an issue? Post it here. On the weekend of June 24th we will hold an online workshop for all ideas that have reached at least 100 upvotes. We will help you collaborate to turn your idea into a proposal that we will host online here and help you submit to <%= link_to "Stanford Vision Planning", "http://planning.stanford.edu" %>!</p>
 
-	<% if logged_in? %>
-  		<%= render 'shared/idea_form' %>
+<div class="row " > 
+<div class="col-xs-7 col-md-10">
+    <p><i>Unless someone cares a great deal, the situation will never improve. - The Lorax</i></p>
+    <p>Have an idea that will change Stanford for the better? Want to raise an issue? Post it here. On the weekend of June 24th we will hold an online workshop for all ideas that have reached at least 100 upvotes. We will help you collaborate to turn your idea into a proposal that we will host online here and help you submit to <%= link_to "Stanford Vision Planning", "http://planning.stanford.edu" %>!</p>
+    <% if logged_in? %>
+    <%= render 'shared/idea_form' %>
     <% else %>
-    	<%= link_to "Sign up to post an idea", signup_path%>
-  	<% end %> 
-      <h3>Ideas</h3>
-      <p>Vote on ideas or click on an idea to view the forum discussion.</p>
+    <%= link_to "Sign up to post an idea", signup_path%>
+    <% end %> 
 
-      <%= render 'shared/feed' %>
+  </div>
+  <div class="col-xs-5 col-md-2">
+    <%= image_tag("lorax.jpg", alt: "The lorax") %>
+  </div>
+
+
+</div>
+
+
+
+<h3>Ideas</h3>
+<p>Vote on ideas or click on an idea to view the forum discussion.</p>
+
+<%= render 'shared/feed' %>
