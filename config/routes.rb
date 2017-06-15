@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :ideas, only: [:create, :update, :destroy, :index]
   post '/upvote', to: 'votes#upvote'
+  get '/nav', to: 'application#nav'
   mount Thredded::Engine => '/forum'
 end

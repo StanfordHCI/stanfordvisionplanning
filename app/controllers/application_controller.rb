@@ -3,6 +3,9 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include RegcodesHelper
   include ReqemailsHelper
+  def nav
+    render :partial => 'layouts/forum_header'
+  end
   private
 
     # Confirms a logged-in user.
