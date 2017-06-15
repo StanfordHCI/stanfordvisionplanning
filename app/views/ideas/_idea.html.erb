@@ -1,13 +1,13 @@
 <article class="idea panel panel-default" id="idea-<%= idea.id %>">
     <div class="panel-body clearfix">
         <div class="row action">
-            <div class="col-sm-1">  
+            <div class="col-sm-2">  
                 <div class="vote-action-container">
                     <%= render 'ideas/vote_button', idea: idea, value: 1 %>
                     <%= render 'ideas/vote_button', idea: idea, value: -1 %>
                 </div>
             </div>
-            <div class="col-sm-10">
+            <div class="col-sm-8">
                <p class="content lead"> 
                      <% if idea.thredded_topic != nil %>
                      <%= link_to idea.content, Thredded::Engine.routes.url_helpers.messageboard_topic_path(messageboard_id: idea.thredded_topic.messageboard_id, id: idea.thredded_topic.id), class: 'normal-link' %> 
@@ -17,16 +17,16 @@
                      </p>
 
             </div>
-            <div class="col-sm-1" style="padding: 0px">
-                <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="<%=idea.content%>" data-url="http://www.stanfordlorax.com" data-hashtags="stanfordlorax" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
-        </div>
-        <footer class="pull-right">
-
+            <div class="col-sm-2">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="<%=idea.content%>" data-url="http://www.stanfordlorax.com" data-hashtags="stanfordlorax" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><br>
             <%= time_tag idea.created_at do %>
                 Posted <%= time_ago_in_words(idea.created_at) %> ago
             <% end %>
             <cite>by <%= idea.user.name %></cite>.
+            </div>
+        </div>
+        <footer class="pull-right">
+        
         </footer>
     </div>
 </article>

@@ -1,17 +1,21 @@
+<div class="panel-body clearfix">
 <%= form_for(@idea) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
   	<div class="row" > 
-  	  <div class="col-md-8">
+  	  <div class="col-md-10">
   		<div class="input-group">
 				<%= f.text_area :content, placeholder: 'Leave an idea...', class: 'form-control', rows: 3, maxlength: 140, required: true %>
 		<span class="input-group-addon" id="countdown-box"><div id="idea-countdown">140</div></span>
 	  </div>
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-2" style="margin-top: 10px;">
 	  <%= f.submit "Post", class: "btn btn-lg btn-primary" %>
 	</div>
     
   </div>
+  </div>
+  </div>
+
 
 <% end %>
