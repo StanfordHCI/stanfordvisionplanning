@@ -9,7 +9,7 @@
             </div>
             <div class="col-sm-8">
                <p class="content lead"> 
-                    <% if idea.created_at >= 24.hours.ago %>
+                    <% if idea.created_at >= 48.hours.ago %>
                         <span class="label label-default">new</span>
                     <% end %>
                      <% if idea.thredded_topic != nil %>
