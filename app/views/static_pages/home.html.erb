@@ -1,25 +1,66 @@
+<div class="row " style="font-size: 110%"> 
 
-<div class="row " > 
-<div class="col-xs-12 col-md-10">
-    <p><i>Unless someone cares a great deal, the situation will never improve. - The Lorax</i></p>
-    <p>Have an idea that will change Stanford for the better? Want to raise an issue? Post it here. On the weekend of June 24th we will hold an online workshop for all ideas that have reached at least 100 upvotes. We will help you collaborate to turn your idea into a proposal that we will host online here and help you submit to <%= link_to "Stanford Vision Planning", "http://planning.stanford.edu" %>!</p>
-    <% if logged_in? %>
-    <%= render 'shared/idea_form' %>
-    <% else %>
-    <%= link_to "Sign up to post an idea", signup_path%>
-    <% end %> 
+    <div class="col-md-6">
+    <%= link_to(image_tag("lorax2.jpg", alt: "Join us here"), "http://stanfordlorax.slack.com") %>
+      
+    </div>
+    <div class="col-md-6">
+      <p>These ideas are a result of our brainstorming phase. They need your help to turn into actual proposals that we can submit to the administration. You will work with a team of other students and we will provide templates. We will host all final proposals on this website for the world to see.</p>
+      <article class="idea panel panel-default">
+          <div class="panel-body clearfix">
+            <p > 
+            more postdoc housing please <span class="label label-default">housing</span>
+            </p>
+          </div>
+        </article>
+         <article class="idea panel panel-default">
+          <div class="panel-body clearfix">
+            <p>
+            Make faculty as diverse as student population by 2030 <span class="label label-default">hiring</span> <span class="label label-default">social justice</span> 
+            </p>
+          </div>
+        </article>
+        <article class="idea panel panel-default">
+          <div class="panel-body clearfix">
+            <p>
+              End the use of subcontractors that do not pay prevailing style wage or have unpaid wage and hour violations; #endexploitation <span class="label label-default">social justice</span> 
+            </p>
+          </div>
+        </article>
+        <article class="idea panel panel-default">
+          <div class="panel-body clearfix">
+            <p>
+              Set and enforce university-wide evidence-based standards for teaching, admissions, and mentorship. <span class="label label-default">admissions</span>
+            </p>
+          </div>
+        </article>
+        <article class="idea panel panel-default">
+          <div class="panel-body clearfix">
+            <p>
+              A "Family Resource Center" to support students and postdocs with children. <span class="label label-default">resources</span>
+            </p>
+          </div>
+        </article>
+        <article class="idea panel panel-default">
+          <div class="panel-body clearfix">
+            <p>
+              Improve the accessibility and quality of CAPS <span class="label label-default">resources</span>
+            </p>
+          </div>
+        </article>
+        <article class="idea panel panel-default">
+          <div class="panel-body clearfix">
+            <p>
+              Make Stanford run on 100% renewable energy <span class="label label-default">social justice</span>
+            </p>
+          </div>
+        </article>
+        
+        <p><%= link_to "More...", brainstorm_path %></p>
 
-  </div>
-  <div class="hidden-xs col-md-2">
-    <%= image_tag("lorax.jpg", alt: "The lorax") %>
-  </div>
+
+
+    </div>
 
 
 </div>
-
-
-
-<h3>Ideas</h3>
-<p>Vote on ideas or click on an idea to view the forum discussion.</p>
-
-<%= render 'shared/feed' %>

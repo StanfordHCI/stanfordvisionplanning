@@ -15,9 +15,10 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li <% if current_page?(root_path) %> class="active" <% end %> > <%= link_to "Ideas", root_path %></li>
+      <!-- <li <% if current_page?(root_path) %> class="active" <% end %> > <%= link_to "Ideas", root_path %></li> -->
+      <li <% if current_page?(brainstorm_path) %> class="active" <% end %> ><%= link_to "Brainstorm", brainstorm_path %></li>      
       <li <% if current_page?(faq_path) %> class="active" <% end %> ><%= link_to "FAQ", faq_path %></li>
-      <li ><%= link_to "Forum", "http://www.stanfordlorax.com/forum/ideas" %></li>
+      <!-- <li ><%= link_to "Forum", "http://www.stanfordlorax.com/forum/ideas" %></li> -->
       
     </ul>
     <ul class="nav navbar-nav navbar-right">

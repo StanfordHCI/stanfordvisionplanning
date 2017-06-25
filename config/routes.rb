@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'static_pages/home'
 
+
   get 'static_pages/help'
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get '/faq', to: 'static_pages#faq'
+  get '/brainstorm', to: 'static_pages#brainstorm'
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :ideas, only: [:create, :update, :destroy, :index]
   post '/upvote', to: 'votes#upvote'
