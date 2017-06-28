@@ -12,6 +12,9 @@
                     <% if idea.created_at >= 48.hours.ago %>
                         <span class="label label-default">new</span>
                     <% end %>
+                    <% if idea.proposal != nil %>
+                        Edit proposal:  <%= link_to idea.proposal, idea.proposal_link, target: "_blank", class: 'normal-link' %> (will be submitted in 3 days)<br>
+                    <% end %>
                      <% if idea.thredded_topic != nil %>
                      <%= link_to idea.content, Thredded::Engine.routes.url_helpers.messageboard_topic_path(messageboard_id: idea.thredded_topic.messageboard_id, id: idea.thredded_topic.id), class: 'normal-link' %> 
                      <% else %>

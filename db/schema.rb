@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170518015700) do
+ActiveRecord::Schema.define(version: 20170628234234) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -30,6 +36,8 @@ ActiveRecord::Schema.define(version: 20170518015700) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "thredded_topic_id"
+    t.string   "proposal"
+    t.string   "proposal_link"
     t.index ["thredded_topic_id"], name: "index_ideas_on_thredded_topic_id"
     t.index ["user_id", "created_at"], name: "index_ideas_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_ideas_on_user_id"
