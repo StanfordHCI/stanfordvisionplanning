@@ -22,15 +22,15 @@
                     <% end %>
                     <% if idea.proposal != nil %>
                           <%= link_to "Edit proposal: "+idea.proposal, idea.proposal_link, target: "_blank", class: 'normal-link' %> <br>
-                        <%= link_to "Discussion", Thredded::Engine.routes.url_helpers.messageboard_topic_path(messageboard_id: idea.thredded_topic.messageboard_id, id: idea.thredded_topic.id), class: 'normal-link' %> <br>
-                        (will be submitted in 3 days)
+                        <%= link_to "Join Discussion", Thredded::Engine.routes.url_helpers.messageboard_topic_path(messageboard_id: idea.thredded_topic.messageboard_id, id: idea.thredded_topic.id), class: 'normal-link' %> <br>
+                        (will be submitted in 2 days)
                      <% elsif idea.thredded_topic != nil %>
                      <%= link_to idea.content, Thredded::Engine.routes.url_helpers.messageboard_topic_path(messageboard_id: idea.thredded_topic.messageboard_id, id: idea.thredded_topic.id), class: 'normal-link' %> 
                      <% else %>
                        <%= idea.content %>
                      <% end %>
                      </p>
-                    
+
             </div>
             <div class="col-sm-2">
             <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="<%=idea.content%>" data-url="http://www.stanfordlorax.com" data-hashtags="stanfordlorax" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><br>
