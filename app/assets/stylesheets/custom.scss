@@ -201,14 +201,14 @@ span.picture {
 
 .btn-downvote {
   color: white;
-  margin-top: 5px;
-  background-color: #D43231;
-  border-color:darken(#D43231, 5%);
+  margin-bottom: 5px;
+  background-color: #C0C0C0;
+  border-color:darken(#A9A9A9, 5%);
 }
 
 .btn-downvote:hover {
   color: white;
-  background-color: darken(#D43231, 5%);
+  background-color: darken(#fec846, 5%);
 }
 
 .btn-upvote.voted {
@@ -222,12 +222,13 @@ span.picture {
 }
 
 .btn-downvote.voted {
-  border: 2px inset darken(#D43231, 20%);
+  background-color: #fec846;
+  border: 2px inset darken(#fec846, 20%);
 }
 
 .btn-downvote.voted:hover {
-  background-color: darken(#D43231, 5%);
-  border: 2px inset darken(#D43231, 20%);
+  background-color: darken(#fec846, 5%);
+  border: 2px inset darken(#fec846, 20%);
 }
 
 @media (min-width: 1200px) {
@@ -266,4 +267,5 @@ span.picture {
   color: #666;
   margin-top: 5px;
 }
+
 

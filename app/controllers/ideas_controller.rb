@@ -26,21 +26,24 @@ class IdeasController < ApplicationController
   
   def update
     idea = Idea.find(params[:id])
-    vote = idea.votes.find_or_initialize_by(user: current_user)
+    cur_vote = idea.votes.find_by(user: current_user, value: params[:value].to_i)
+    vote = Vote.new(idea: idea, user: current_user, value: params[:value].to_i)
+    voted = 0
     if logged_in_user == false
       render json: { success: false }
     else 
-      if vote.value == params[:value].to_i
-        vote.destroy
-      else
-        vote.value = params[:value]
-        vote.save
+      
+      if cur_vote != nil
+        cur_vote.destroy
         
+      else
+        vote.save
+        voted = vote.value
         Thredded::UserTopicFollow.create_unless_exists(current_user.id, idea.thredded_topic_id)
         #idea.forum_topic.subscribe_user current_user.id
       end
       
-      voted = vote.destroyed? ? 0 : vote.value
+      #voted = cur_vote.destroyed? ? 0 : vote.value
 
       render json: { upvotes: idea.upvotes, downvotes: idea.downvotes,voted: voted}    
     end

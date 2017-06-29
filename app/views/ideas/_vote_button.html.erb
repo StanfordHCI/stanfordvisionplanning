@@ -1,12 +1,13 @@
 <%= link_to idea_path(:id => idea.id, :value => value), vote_button_options(idea, value) do %>
   <% if value > 0 %>
     <span class="glyphicon glyphicon-ok"></span>
-    <span class="sr-only">endorse</span>
+    <span class="sr-only">support</span><br>
     <span class="vote-count"><%= idea.upvotes %></span>
   <%else %>
-    <span class="glyphicon glyphicon-chevron-down"></span>
-    <span class="sr-only">downvote</span> 
+    <span class="glyphicon glyphicon-pencil"></span>
+    <span class="sr-only">write</span> <br>
     <span class="vote-count"><%= idea.downvotes %></span>
   <% end %>
 <% end %>
 
+ 

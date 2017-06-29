@@ -3,8 +3,16 @@
         <div class="row action">
             <div class="col-sm-2">  
                 <div class="vote-action-container">
-                    <%= render 'ideas/vote_button', idea: idea, value: 1 %>
-                    <!-- <%= render 'ideas/vote_button', idea: idea, value: -1 %> -->
+                    <div class="row">
+                        <div class="col-sm-6">  
+                            <%= render 'ideas/vote_button', idea: idea, value: -1 %> 
+                        </div>
+                        <div class="col-sm-6">  
+                            <%= render 'ideas/vote_button', idea: idea, value: 1 %>
+                        </div>
+                    </div>
+                    
+                    
                 </div>
             </div>
             <div class="col-sm-8">
@@ -22,7 +30,7 @@
                        <%= idea.content %>
                      <% end %>
                      </p>
-
+                    
             </div>
             <div class="col-sm-2">
             <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="<%=idea.content%>" data-url="http://www.stanfordlorax.com" data-hashtags="stanfordlorax" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><br>
