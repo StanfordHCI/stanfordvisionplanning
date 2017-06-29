@@ -21,8 +21,16 @@
                         <span class="label label-default">new</span>
                     <% end %>
                     <% if idea.proposal != nil %>
-                          <%= link_to "Edit proposal: "+idea.proposal, idea.proposal_link, target: "_blank", class: 'normal-link' %> <br>
-                        <%= link_to "Join Discussion", Thredded::Engine.routes.url_helpers.messageboard_topic_path(messageboard_id: idea.thredded_topic.messageboard_id, id: idea.thredded_topic.id), class: 'normal-link' %> <br>
+                    <%= link_to idea.proposal_link,  target: "_blank", class: 'normal-link' do %>
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        <span class="sr-only">write</span> Edit proposal: <%= idea.proposal%>
+                    <% end %>
+                           <br>
+                           <%= link_to Thredded::Engine.routes.url_helpers.messageboard_topic_path(messageboard_id: idea.thredded_topic.messageboard_id, id: idea.thredded_topic.id),  target: "_blank", class: 'normal-link' do %>
+                        <span class="glyphicon glyphicon-comment"></span>
+                        <span class="sr-only">write</span> Discuss
+                    <% end %>
+                         <br>
                         (will be submitted in 2 days)
                      <% elsif idea.thredded_topic != nil %>
                      <%= link_to idea.content, Thredded::Engine.routes.url_helpers.messageboard_topic_path(messageboard_id: idea.thredded_topic.messageboard_id, id: idea.thredded_topic.id), class: 'normal-link' %> 
