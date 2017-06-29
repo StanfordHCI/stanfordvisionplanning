@@ -190,8 +190,8 @@ span.picture {
 
 .btn-upvote {
   color: white;
-  background-color: #1caff6;
-  border-color:darken(#1caff6, 5%);
+  background-color: #C0C0C0;
+  border-color:darken(#A9A9A9, 5%);
 }
 
 .btn-upvote:hover {
@@ -212,6 +212,7 @@ span.picture {
 }
 
 .btn-upvote.voted {
+  background-color: #1caff6;
   border: 2px inset darken(#1caff6, 20%);
 }
 
