@@ -31,7 +31,7 @@
                         <span class="sr-only">write</span> Discuss
                     <% end %>
                          <br>
-                        (will be submitted in 2 days)
+                        (will be submitted in 1 days)
                      <% elsif idea.thredded_topic != nil %>
                      <%= link_to idea.content, Thredded::Engine.routes.url_helpers.messageboard_topic_path(messageboard_id: idea.thredded_topic.messageboard_id, id: idea.thredded_topic.id), class: 'normal-link' %> 
                      <% else %>
